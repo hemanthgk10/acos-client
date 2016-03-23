@@ -1,0 +1,5 @@
+when HTTP_REQUEST {
+     if {not [IP::addr [IP::client_addr] equals 192.168.18.0/24] and ([HTTP::uri] starts_with “/private”)} {
+          drop
+     }
+}
